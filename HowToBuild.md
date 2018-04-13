@@ -22,6 +22,6 @@ MSBuild ffftp.sln /p:Configuration=Release;Platform=x64
 
 ## 開発
 
-Visual Studioで`ffftp.sln`を開いてください。インストーラープロジェクトを参照するためには[.NET Framework 3.5が必要](https://github.com/wixtoolset/issues/issues/5523)です。特にWindows 8以降は標準でインストールされていないので注意してください。
+Visual Studioで`ffftp.sln`を開いてください。インストーラープロジェクトを参照するためには[Wix Toolset Visual Studio 2017 Extension](https://marketplace.visualstudio.com/items?itemName=RobMensching.WixToolsetVisualStudio2017Extension)です。
 
 `char*`の文字コードはWindows標準のANSI（日本語ではShift-JIS）ではなくUTF-8となっています。現在、順次`std::wstring`に移行中です。
