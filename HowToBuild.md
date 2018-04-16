@@ -9,6 +9,8 @@
   - Windows XP support for C++
   - Windows SDK (10.0.16299.0) for Desktop C++ [x86 and x64]
 
+「Workloads; ワークロード」から「Desktop development with C++; C++によるデスクトップ開発」を選択し「Optional; オプション」から「Windows XP support for C++; Windows XP Support for C++」を選択します。「Indivisual components; 個別のコンポーネント」にある同名コンポーネントは不完全なため注意が必要です。
+
 VC++ 2017 version 15.5 v14.12 toolset以降であれば動作するはずですが、現在は最新の`v141`をターゲットとしています。Windows SDKについてもバージョン依存しないはずですが、現在は`10.0.16299.0`をターゲットとしています。
 
 ## ビルド方法
