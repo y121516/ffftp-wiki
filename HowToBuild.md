@@ -3,19 +3,22 @@
 ## 環境
 
 - Windows 7 SP1以降
-- Visual Studio 2017最新Update
+  - .NET Framework 3.5
+- Visual Studio 2017
   - MSBuild
   - VC++ 2017 v141 toolset (x86,x64)
   - Windows XP support for C++
   - Windows SDK (10.0.16299.0) for Desktop C++ [x86 and x64]
 
-「Workloads; ワークロード」から「Desktop development with C++; C++によるデスクトップ開発」を選択し「Optional; オプション」から「Windows XP support for C++; Windows XP Support for C++」を選択します。「Indivisual components; 個別のコンポーネント」にある同名コンポーネントは不完全なため注意が必要です。
+インストーラープロジェクトのビルドには[.NET Framework 3.5が必要](https://github.com/wixtoolset/issues/issues/5523)です。特にWindows 8以降は標準でインストールされていないので注意してください。
 
-VC++ 2017 version 15.5 v14.12 toolset以降であれば動作するはずですが、現在は最新の`v141`をターゲットとしています。Windows SDKについてもバージョン依存しないはずですが、現在は`10.0.16299.0`をターゲットとしています。
+Visual Studio 2017はUpdateを適用し最新版を使用してください。 _Workloads_ から **Desktop development with C++** を選択し _Optional_ から **Windows XP support for C++** を選択します。 _Indivisual components_ にある同名コンポーネントは不完全なため注意が必要です。
+
+**VC++ 2017 version 15.5 v14.12 toolset** 以降であれば動作するはずですが、現在は最新の **v141** をターゲットとしています。Windows SDKについてもバージョン依存しないはずですが、現在は **10.0.16299.0** をターゲットとしています。
 
 ## ビルド方法
 
-Developper Command Prompt for VS 2017 上で次のコマンドを実行します。
+**Developper Command Prompt for VS 2017** 上で次のコマンドを実行します。
 ```
 MSBuild ffftp.sln /p:Configuration=Release;Platform=Win32
 MSBuild ffftp.sln /p:Configuration=Release;Platform=x64
