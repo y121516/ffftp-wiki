@@ -13,11 +13,11 @@
 
 ### Visual Studio 2017について
 
-Updateを適用し最新版を使用してください。
+Updateを適用し最新版を使用してください。現在、Visual Studio 2017 version 15.7以降が必要です。
 
 _Workloads_ から **Desktop development with C++** を選択し _Optional_ から **Windows XP support for C++** を選択します。 _Indivisual components_ にある同名コンポーネントは不完全なため注意が必要です。
 
-**VC++ 2017 version 15.5 v14.12 toolset** 以降であれば動作するはずですが、現在は最新の **v141** をターゲットとしています。Windows SDKについてもバージョン依存しないはずですが、現在は **10.0.16299.0** をターゲットとしています。
+現在は最新の **v141** をターゲットとしています。Windows SDKはバージョン依存しないはずですが、現在は **10.0.17134.0** をターゲットとしています。
 
 Updateを適用し最新版を使用してください。大事なことなので二回言いました。
 
