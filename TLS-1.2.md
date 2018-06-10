@@ -15,9 +15,25 @@ HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\P
 ## Windows Vista
 既にサポートは終了しており、セキュリティパッチが提供されない状況です。アップグレードすることを推奨します。
 
-既定でインストールされていません。
+既定でインストールされていません。Windows Server 2008 SP2向けに[更新プログラム](https://support.microsoft.com/en-us/help/4019276/update-to-add-support-for-tls-1-1-and-tls-1-2-in-windows)が用意されており、[Microsoft Updateカタログ](https://www.catalog.update.microsoft.com/Search.aspx?q=KB4019276)からダウンロードできます。Windows Vistaにもそのまま適用できます。
+更新プログラム適用後は次のレジストリを設定することで有効化できます。
+```
+HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\TLS 1.2\Client
+名前 DisabledByDefault、種類 DWORD、値 0
+```
+もし同じ場所に`Enabled`が存在する場合、値が`1`であることを確認してください。
 
 ## Windows XP
 既にサポートは終了しており、セキュリティパッチが提供されない状況です。アップグレードすることを推奨します。
 
-Windows Updateを全て適用してください。TLS 1.2がインストールされ、既定で有効となります。
+Windows Updateを全て適用してください。Windows Embedded POSReady 2009向けに[更新プログラム](https://support.microsoft.com/en-us/help/4019276/update-to-add-support-for-tls-1-1-and-tls-1-2-in-windows)が用意されており、[Microsoft Updateカタログ](https://www.catalog.update.microsoft.com/Search.aspx?q=KB4019276)からダウンロードできます。次のレジストリを設定することでWindows XPに適用できるようになります。
+```
+HKEY_LOCAL_MACHINE\SYSTEM\WPA\PosReady
+名前 Installed、種類 DWORD、値 1
+```
+更新プログラム適用後は次のレジストリを設定することで有効化できます。
+```
+HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\TLS 1.2\Client
+名前 DisabledByDefault、種類 DWORD、値 0
+```
+もし同じ場所に`Enabled`が存在する場合、値が`1`であることを確認してください。
