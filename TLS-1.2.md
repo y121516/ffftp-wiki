@@ -23,6 +23,8 @@ HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\P
 ```
 もし同じ場所に`Enabled`が存在する場合、値が`1`であることを確認してください。
 
+
+
 ## Windows XP
 既にサポートは終了しており、セキュリティパッチが提供されない状況です。アップグレードすることを推奨します。
 
@@ -37,3 +39,12 @@ HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\P
 名前 DisabledByDefault、種類 DWORD、値 0
 ```
 もし同じ場所に`Enabled`が存在する場合、値が`1`であることを確認してください。
+
+## Internet Explorer
+なお、Internet Explorerは上記レジストリを参照していません。
+```
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Internet Explorer\AdvancedOptions\CRYPTO\TLS1.2
+名前 OSVersion
+```
+このレジストリを削除することで、インターネットオプション、詳細設定のセキュリティの項目に TLS 1.2 が表示されるようになります。この項目により、TLS 1.2が有効化できます。  
+ただし、TLS 1.2を有効化できても、暗号アルゴリズムが不足している、ルート証明書が古い等で接続できない場合があります。
