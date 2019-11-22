@@ -7,16 +7,25 @@
 - Visual Studio 2019
   - MSBuild
   - MSVC v142 - VS 2019 C++ x64/x86 build tools (v14.22)
-  - Windows 10 SDK (10.0.18362.0)
+  - Windows 10 SDK (10.0)
   - Wix Toolset Visual Studio 2019 Extension
+- vcpkg
+  - boost.regex
 
 ### Visual Studio 2019について
-
 Updateを適用し最新版を使用してください。
 
 ターゲットとしては **Visual Studio 2019 (v142)** および **10.0 (latest installed version)** を選択しています。
 
 Updateを適用し最新版を使用してください。大事なことなので二回言いました。
+
+### vcpkgについて
+[vcpkg](https://github.com/microsoft/vcpkg)のドキュメントに従い導入してください。
+
+その上で、次のコマンドでパッケージをインストールしてください。
+```
+vcpkg install boost-regex:x86-windows-static boost-regex:x64-windows-static
+```
 
 ### インストーラープロジェクトについて
 インストーラープロジェクトのビルドには[.NET Framework 3.5が必要](https://github.com/wixtoolset/issues/issues/5523)です。特にWindows 8以降は標準でインストールされていないので注意してください。ただし、.NET Framework 3.5が未インストールであってもビルドに支障ない場合もあるようです。
