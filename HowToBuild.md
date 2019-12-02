@@ -22,11 +22,6 @@ Updateを適用し最新版を使用してください。大事なことなの�
 ### vcpkgについて
 [vcpkg](https://github.com/microsoft/vcpkg)のドキュメントに従い導入してください。
 
-その上で、次のコマンドでパッケージをインストールしてください。
-```
-vcpkg install boost-regex:x86-windows-static boost-regex:x64-windows-static
-```
-
 ### インストーラープロジェクトについて
 インストーラープロジェクトのビルドには[.NET Framework 3.5が必要](https://github.com/wixtoolset/issues/issues/5523)です。特にWindows 8以降は標準でインストールされていないので注意してください。ただし、.NET Framework 3.5が未インストールであってもビルドに支障ない場合もあるようです。
 
@@ -34,10 +29,12 @@ vcpkg install boost-regex:x86-windows-static boost-regex:x64-windows-static
 
 ## ビルド方法
 
-**Developper Command Prompt for VS 2019** 上で次のコマンドを実行します。
+**Developper PowerShell for VS 2019** 上で、ffftpリポジトリをカレントディレクトリに設定して次のコマンドを実行します。
 ```
-MSBuild ffftp.sln /p:Configuration=Release;Platform=Win32
-MSBuild ffftp.sln /p:Configuration=Release;Platform=x64
+PS C:\Path\to\ffftp> git -C C:\Path\to\vcpkg apply -C0 --whitespace=fix (gi vcpkg\*.patch)
+PS C:\Path\to\ffftp> C:\Path\to\vcpkg\vcpkg --overlat-triplets=vcpkg/triplets install boost-regex:x86-windows-ffftp boost-regex:x64-windows-ffftp
+PS C:\Path\to\ffftp> MSBuild ffftp.sln /p:Configuration=Release;Platform=Win32
+PS C:\Path\to\ffftp> MSBuild ffftp.sln /p:Configuration=Release;Platform=x64
 ```
 コンパイルの後、インストーラーが作成されます。`Release`ディレクトリに`ffftp-x86.msi`、`ffftp-x86.zip`、`ffftp-x64.msi`、`ffftp-x64.zip`が生成されます。
 
