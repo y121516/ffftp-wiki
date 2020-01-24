@@ -19,6 +19,8 @@ Updateを適用し最新版を使用してください。
 
 Updateを適用し最新版を使用してください。大事なことなので二回言いました。
 
+言語パックは英語もインストールしてください。vcpkgでboost-regexをインストールするために必要です。
+
 ### vcpkgについて
 [vcpkg](https://github.com/microsoft/vcpkg)のドキュメントに従い導入してください。
 
